@@ -24,5 +24,27 @@ describe("/api", () => {
           );
         });
     });
+    it("Status: 404 Path Not Found for GET Request", () => {
+      return request(server)
+        .get("/api/users-invalid/")
+        .expect(404)
+        .then(({ body: { msg } }) => {
+          expect(msg).to.equal("Path Does Not Exist");
+        });
+    });
+    describe("INVALID METHOD", () => {
+      it("Status: 405 Invalid Method", () => {
+        const invalidMethods = ["delete", "patch", "put", "post"];
+        const promiseArray = invalidMethods.map((method) => {
+          return request(server)
+            [method]("/api/users")
+            .expect(405)
+            .then(({ body: { msg } }) => {
+              expect(msg).to.equal("Method Not Allowed");
+            });
+        });
+        return Promise.all(promiseArray);
+      });
+    });
   });
 });
