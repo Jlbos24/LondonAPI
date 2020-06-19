@@ -11,7 +11,7 @@ This is an API endpoint which returns users with within a distance of 50 miles o
 # Testing
 
 - "npm test"
-- "npm utils"
+- "npm test-utils"
 
 # Technologies
 
