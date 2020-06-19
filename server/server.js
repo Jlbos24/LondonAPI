@@ -8,7 +8,6 @@ server.use(cors());
 server.use(express.json());
 
 server.use("/api", apiRoute);
-server.all("/*", error404s);
 
 server.use(error404s);
 server.use(error405s);
