@@ -1,5 +1,7 @@
 This is an API endpoint which returns users with within a distance of 50 miles of London or who are registered as living in London. Additionally you can request all users with and view their distance from London.
 
+##  Heroku - https://jbuserapi.herokuapp.com/api/users
+
 # Getting Started
 
 - Clone the repo - https://github.com/Jlbos24/API-DWP.git
